@@ -21,9 +21,9 @@ class Recommendations:
         """
         Загружает рекомендации из файла
         """
-        logger.info(f"Loading recommendations, type: {type_rec}")
-        self._recs[type_rec] = pd.read_parquet(path, **kwargs)
-        if type_rec == "personal":
+        logger.info(f"Loading recommendations, type: {type_rec}") 
+        self._recs[type_rec] = pd.read_parquet(path, **kwargs) # тут загрузка 
+        if type_rec == "personal": # тут загрузки нет, только трансформация
             self._recs[type_rec] = self._recs[type_rec].set_index("user_id")
         logger.info(f"Loaded {type_rec} recommendations")
 

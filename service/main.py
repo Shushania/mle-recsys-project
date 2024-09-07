@@ -30,7 +30,7 @@ rec_store.load(
     os.path.join(DATA_DIR,"als_recommendations_sample.parquet"),
     columns=["user_id", "track_id", "score"],
     )
-
+# Да загрузка будет, она выше  условия
 rec_store.load(
     "default",
     os.path.join(DATA_DIR,"top_popular.parquet"),
